@@ -1,1 +1,59 @@
-
+* {
+  font-family: "Platypi", Arial, sans-serif;
+	color: #EDD9B4;
+	text-align: center;}
+body {
+	width: 90%;
+	margin: 0 auto;
+  background: url("https://images.unsplash.com/photo-1571751239008-50cad6cb9265?q=80&w=3000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") no-repeat center fixed;
+  background-size: cover;}
+.content {
+	overflow: auto;}
+.nav, .feature, .footer {
+	margin: 1%;}
+.column1, .column2, .column3 {
+	width: 31.3%;
+	float: left;
+	margin: 1%;}
+.column3 {
+	margin-right: 0%;}
+li {
+	display: inline;
+	padding: 0.5em;}
+#logo {
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0.05em 0.25em 0.25em 0.25em; /*Feat 75% Opac*/
+  background-color: #332d21bf;
+  text-shadow: -1px 1px 0 #000,
+                1px 1px 0 #000,
+                1px -1px 0 #000,
+               -1px -1px 0 #000;
+  width: fit-content;
+}
+.nav {
+  background-color: #982312;
+  padding: 0.5em 0;}
+.feature, .article {
+	height: 10em;
+	margin-bottom: 1em;}
+.feature {
+  background-color: #332D21;}
+#feature-image {
+  width: 95%;
+  height: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid black;
+  background-image: url("https://jeffreyianross.com/wp-content/uploads/51926941391_e0944a48af_o-845x321.jpg");
+  background-size: contain;}
+.column1 {
+  background-color: #AE2C1C;}
+.column2 {
+  background-color: #7B0000;} /*Col Darkened 20%*/
+.column3 {
+  background-color: #480000;} /*Col Darkened 40%*/
+.footer {
+	background-color: #4C0000; /*Nav Darkened 30%*/
+	padding: 0.5em 0;}
