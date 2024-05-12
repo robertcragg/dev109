@@ -1,47 +1,46 @@
+//Parent Function
 function createRhombus(pHeight, pColorEven, pColorOdd, pSymbol) {
-  upRight(pHeight, pColorEven, pColorOdd, pSymbol);
-  downRight(pHeight, pColorEven, pColorOdd, pSymbol);
-  upLeft(pHeight, pColorEven, pColorOdd, pSymbol);
-  downLeft(pHeight, pColorEven, pColorOdd, pSymbol);
+  rhombUp(pHeight, pColorEven, pColorOdd, pSymbol);
+  rhombDown(pHeight, pColorEven, pColorOdd, pSymbol);
 }
 
-function upRight(pHeight, pColorEven, pColorOdd, pSymbol) {
+//Child function 1 - builds top half of the rhombus
+function rhombUp(pHeight, pColorEven, pColorOdd, pSymbol) {
   var rLine = "";
-  for (i = 0; i < pHeight; i++) {
+  for (i = 0; i <= pHeight - 1; i++) {
     rLine += "<p>";
     // Create each line on the Rhombus
-    for (j = 0; j <= i; j++) {
+    for (j = 0; j <= 2 * i; j++) {
       // Is the position even or odd so we change the color
       if (j % 2)
         // even
-        rLine +=
-          "<span style='color:" + pColorEven + ";'>" + pSymbol + "</span>";
+        rLine += "<span style='color:" + pColorEven + ";'>" + pSymbol + ' ' + "</span>";
       else
         // odd
-        rLine +=
-          "<span style='color:" + pColorOdd + ";'>" + pSymbol + "</span>";
+        rLine += "<span style='color:" + pColorOdd + ";'>" + pSymbol + ' ' + "</span>";
     }
     rLine += "</p>";
   }
-  document.getElementById("upRight").innerHTML = rLine;
+  document.getElementById("rhombUp").innerHTML = rLine;
 }
 
-function downRight(pHeight, pColorEven, pColorOdd, pSymbol) {
+//Child function 2 - builds bottom half of the rhombus and subtracts one row
+function rhombDown(pHeight, pColorEven, pColorOdd, pSymbol) {
   var rLine ="";
-  for (i=pHeight; i>0; i--) {
+  for (i = (pHeight - 1); i > -1; i--) {
     rLine +="<p>";
     //Create each line on the Rhombus
-    for(j=0; j<i; j++) {
+    for(j = 0; j < (2 * i) - 1; j++) {
       //Is the position even or odd so we change the color
-      if (j%2)
+      if (j % 2)
       //even
-      rLine +="<span style='color:" + pColorEven + ";'>" + pSymbol +"</span>";
+      rLine +="<span style='color:" + pColorEven + ";'>" + pSymbol + ' ' + "</span>";
       else
       //odd
-      rLine +="<span style='color:" + pColorOdd + ";'>" + pSymbol + "</span>";
+      rLine +="<span style='color:" + pColorOdd + ";'>" + pSymbol + ' ' + "</span>";
     }
-  rLine +="</p>";
-  // console.log(rLine);
+    rLine +="</p>";
+    // console.log(rLine);
   }
-document.getElementById("downRight").innerHTML = rLine;
+  document.getElementById("rhombDown").innerHTML = rLine;
 }
