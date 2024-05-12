@@ -1,1 +1,98 @@
+/*Global Styles*/
+* {
+  font-family: "Platypi", Arial, sans-serif;
+	color: #EDD9B4;
+	text-align: center;
+}
+body {
+	width: 90%;
+	margin: 0 auto;
+  background: url("https://images.unsplash.com/photo-1571751239008-50cad6cb9265?q=80&w=3000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") no-repeat center fixed;
+  background-size: cover;
+}
+.content {
+	overflow: auto;
+}
+.page-heading {
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0.05em 0.25em 0.25em 0.25em; /*Feat 75% Opac*/
+  background-color: #332d21bf;
+  text-shadow: -1px 1px 0 #000,
+                1px 1px 0 #000,
+                1px -1px 0 #000,
+               -1px -1px 0 #000;
+  width: fit-content;
+}
+li.nav {
+	display: inline;
+	padding: 0.5em;
+}
+.nav, .footer {
+	margin: 1%;
+  padding: 0.25em;
+}
+.nav {
+  background-color: #332D21; /*Primary 2nd Color*/
+}
+.footer {
+	background-color: #4C0000; /*Primary 3rd Col Darkened 30%*/
+}
 
+
+/*Page Specific Styles*/
+.one-col-layout {
+	width: 98%;
+  height: auto;
+	float: left;
+	margin: 1%;
+  margin-bottom: 1em;
+}
+.two-col-layout {
+	width: 48%;
+  height: auto;
+	float: left;
+	margin: 1%;
+  margin-bottom: 1em;
+}
+.three-col-layout {
+	width: 31.3%;
+  height: auto;
+	float: left;
+	margin: 1%;
+  margin-bottom: 1em;
+}
+.col-color1 {
+  background-color: #AE2C1C; /*Primary 3rd Color*/
+}
+.col-color2 {
+  background-color: #7B0000; /*Primary 3rd Col Darkened 20% - Use as Primary 4th Color*/
+}
+#f-submit{
+  margin: 2em;
+  padding: 0.5em;
+  background-color: #332D21;;
+}
+div.artifacts {
+  margin: 1em;
+}
+.artifacts img {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;
+}
+div.validations {
+  margin: 1em;
+}
+.validations img {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 80%;
+}
+.validations a {
+  display: inline-block;
+  margin: 0.25em;
+}
