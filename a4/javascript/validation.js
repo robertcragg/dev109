@@ -1,3 +1,21 @@
+const formBlur = document.getElementById("archiveForm");
+
+formBlur.addEventListener(
+  "focus",
+  (event) => {
+    event.target.style.background = "#ABEDD4"
+  },
+  true,
+);
+
+formBlur.addEventListener(
+  "blur",
+  (event) => {
+    event.target.style.background = "";
+  },
+  true,
+);
+
 function isValid() {
   if (firstName() && lastName() && userEmail() && userPhone() && userName() && userPassword() && userAddress() && userCity() && userState() && userCountry() && userZip()) {
     return true;
@@ -23,7 +41,7 @@ function firstName() {
     console.log("First name invalid — length")
   }
   else if (fname.match("^[a-zA-Z]+$") === null) {
-    document.getElementById("fname-error").innerHTML = "Invalid character: Alpha chars. only</p>";
+    document.getElementById("fname-error").innerHTML = "<p>Invalid character: Alpha chars. only</p>";
     console.log("First name invalid — bad characters")
   }
   else {
@@ -50,7 +68,7 @@ function lastName() {
     console.log("Last name invalid — length")
   }
   else if (lname.match("^[a-zA-Z]+$") === null) {
-    document.getElementById("lname-error").innerHTML = "Invalid Character: Alpha chars. only</p>";
+    document.getElementById("lname-error").innerHTML = "<p>Invalid Character: Alpha chars. only</p>";
     console.log("Last name invalid — bad characters")
   }
   else {
@@ -134,7 +152,7 @@ function userName() {
     console.log("Username invalid — length")
   }
   else if (username.match("^[a-zA-Z]+$") === null) {
-    document.getElementById("username-error").innerHTML = "Invalid character: Alpha chars. only</p>";
+    document.getElementById("username-error").innerHTML = "<p>Invalid character: Alpha chars. only</p>";
     console.log("Username invalid — bad characters")
   }
   else {
@@ -160,9 +178,17 @@ function userPassword() {
     document.getElementById("password-error").innerHTML = "<p>Required Field: 7 chars. max</p>";
     console.log("Password invalid — length")
   }
-  else if (password.match("^[a-zA-Z]+$") === null) {
-    document.getElementById("username-error").innerHTML = "Invalid character: Alpha chars. only</p>";
-    console.log("Password invalid — bad characters")
+  else if (password.search(/[a-z]/) < 0) {
+    document.getElementById("password-error").innerHTML = "<p>Missing Requirement: Must contain one lowercase char.</p>";
+  }
+  else if (password.search(/[A-Z]/) < 0) {
+    document.getElementById("password-error").innerHTML = "<p>Missing Requirement: Must contain one uppercase char.</p>";
+  }
+  else if (password.search(/[0-9]/) < 0) {
+    document.getElementById("password-error").innerHTML = "<p>Missing Requirement: Must contain one numeric char.</p>";
+  }
+  else if (password.search(/[@$!%*#?&]/) < 0) {
+    document.getElementById("password-error").innerHTML = "<p>Missing Requirement: Must contain one special char. [@$!%*#?&]</p>";
   }
   else {
     validPassword = true;
@@ -203,7 +229,7 @@ function userCity() {
   var validCity = false;
 
   //2) read value from HTML
-  var city = document.getElementById("address").value;
+  var city = document.getElementById("city").value;
 
   //3) Do validation
   if (city === "null" || city === "") {
@@ -218,4 +244,77 @@ function userCity() {
 
   //4) return status of each field
   return (validCity);
+}
+
+function userState() {
+  //1) Create variable
+  var validState = false;
+
+  //2) read value from HTML
+  var state = document.getElementById("state").value;
+
+  //3) Do validation
+  if (state === "null" || state === "") {
+    document.getElementById("state-error").innerHTML = "<p>Required Field</p>";
+    console.log("State invalid — blank")
+  }
+  else {
+    validState = true;
+    document.getElementById("state-error").innerHTML = "";
+    console.log("State valid")
+  };
+
+  //4) return status of each field
+  return (validState);
+}
+
+function userCountry() {
+  //1) Create variable
+  var validCountry = false;
+
+  //2) read value from HTML
+  var country = document.getElementById("country").value;
+
+  //3) Do validation
+  if (country === "null" || country === "") {
+    document.getElementById("country-error").innerHTML = "<p>Required Field</p>";
+    console.log("Country invalid — blank")
+  }
+  else {
+    validCountry = true;
+    document.getElementById("country-error").innerHTML = "";
+    console.log("Country valid")
+  };
+
+  //4) return status of each field
+  return (validCountry);
+}
+
+function userZip() {
+  //1) Create variables
+  var validZip = false;
+
+  //2) read value from HTML
+  var country = document.getElementById("country").value;
+  var zip = document.getElementById("zip").value;
+
+  //4) Do validation
+  if (country === "usa") {
+    if (zip === "null" || zip === "" || zip.length > 5) {
+      document.getElementById("zip-error").innerHTML = "<p>Required Field: 5 chars. max</p>";
+      console.log("Zip invalid — length")
+    }
+    else if (zip.match("^[0-9]+$") === null) {
+      document.getElementById("zip-error").innerHTML = "<p>Invalid Zip: Numeric chars. only</p>";
+      console.log("Zip invalid — bad characters")
+    }
+  }
+  else {
+    validZip = true;
+    document.getElementById("zip-error").innerHTML = "";
+    console.log("Zip valid")
+  };
+
+  //5) return status of each field
+  return (validZip);
 }
