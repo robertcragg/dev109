@@ -16,6 +16,7 @@ formBlur.addEventListener(
   true,
 );
 
+
 function isValid() {
   if (firstName() && lastName() && userEmail() && userPhone() && userName() && userPassword() && userAddress() && userCity() && userState() && userCountry() && userZip()) {
     return true;
@@ -112,6 +113,7 @@ function userEmail() {
   return (validEmail);
 }
 
+
 function userPhone() {
   //1) Create variables
   var validPhone = false;
@@ -165,7 +167,7 @@ function userName() {
   return (validUserName);
 }
 
-//NEED TO FIX VALIDATION BEFORE SUBMITAL!!!!
+
 function userPassword() {
   //1) Create variable
   var validPassword = false;
@@ -246,6 +248,7 @@ function userCity() {
   return (validCity);
 }
 
+
 function userState() {
   //1) Create variable
   var validState = false;
@@ -268,6 +271,7 @@ function userState() {
   return (validState);
 }
 
+
 function userCountry() {
   //1) Create variable
   var validCountry = false;
@@ -289,6 +293,7 @@ function userCountry() {
   //4) return status of each field
   return (validCountry);
 }
+
 
 function userZip() {
   //1) Create variables
