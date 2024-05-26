@@ -8,10 +8,10 @@
   </head>
   <body>
     <div class="container">
-      <form onsubmit="return isValid()">
+      <form id="archiveForm" action="thankyou.html" onsubmit="return isValid()">
         <div class="row">
-          <div class="col-25">
-            <span id="submit-error"></span>
+          <div class="col-100">
+            <span class="warning" id="submit-error"></span>
           </div>
         </div>
         <div class="row">
@@ -20,7 +20,7 @@
           </div>
           <div class="col-75">
             <input type="text" id="fname" name="firstname" placeholder="Your name...">
-            <span id="fname-error"></span>
+            <span class="warning" id="fname-error"></span>
           </div>
         </div>
         <div class="row">
@@ -29,7 +29,7 @@
           </div>
           <div class="col-75">
             <input type="text" id="lname" name="lastname" placeholder="Your last name...">
-            <span id="lname-error"></span>
+            <span class="warning" id="lname-error"></span>
           </div>
         </div>
         <div class="row">
@@ -38,7 +38,7 @@
           </div>
           <div class="col-75">
             <input type="text" id="email" name="email" placeholder="Your email...">
-            <span id="email-error"></span>
+            <span class="warning" id="email-error"></span>
           </div>
         </div>
         <div class="row">
@@ -47,7 +47,7 @@
           </div>
           <div class="col-75">
             <input type="text" id="phone" name="phone" placeholder="Your phone number...">
-            <span id="phone-error"></span>
+            <span class="warning" id="phone-error"></span>
           </div>
         </div>
         <div class="row">
@@ -56,7 +56,7 @@
           </div>
           <div class="col-75">
             <input type="text" id="username" name="username" placeholder="Your phone number...">
-            <span id="username-error"></span>
+            <span class="warning" id="username-error"></span>
           </div>
         </div>
         <div class="row">
@@ -64,8 +64,8 @@
             <label for="password">Password</label>
           </div>
           <div class="col-75">
-            <input type="text" id="password" name="password" placeholder="Your password...">
-            <span id="password-error"></span>
+            <input type="password" id="password" name="password" placeholder="Your password...">
+            <span class="warning" id="password-error"></span>
           </div>
         </div>
         <div class="row">
@@ -74,7 +74,7 @@
           </div>
           <div class="col-75">
             <input type="text" id="address" name="address" placeholder="Your address...">
-            <span id="address-error"></span>
+            <span class="warning" id="address-error"></span>
           </div>
         </div>
         <div class="row">
@@ -83,7 +83,7 @@
           </div>
           <div class="col-75">
             <input type="text" id="city" name="city" placeholder="Your city...">
-            <span id="city-error"></span>
+            <span class="warning" id="city-error"></span>
           </div>
         </div>
         <div class="row">
@@ -145,7 +145,7 @@
               <option value="WI">Wisconsin</option>
               <option value="WY">Wyoming</option>
             </select>
-            <span id="state-error"></span>
+            <span class="warning" id="state-error"></span>
           </div>
         </div>
         <div class="row">
@@ -159,7 +159,7 @@
               <option value="mexico">Mexico</option>
               <option value="usa">United States</option>
             </select>
-            <span id="country-error"></span>
+            <span class="warning" id="country-error"></span>
           </div>
         </div>
         <div class="row">
@@ -168,7 +168,7 @@
           </div>
           <div class="col-75">
             <input type="text" id="zip" name="zip" placeholder="Your zip...">
-            <span id="zip-error"></span>
+            <span class="warning" id="zip-error"></span>
           </div>
         </div>
         <div class="row">
@@ -184,6 +184,6 @@
         </div>
       </form>
     </div>
-    <script src=""></script>
+    <script src="https://robertcragg.github.io/dev109/a4/validation.js"></script>
   </body>
 </html>
