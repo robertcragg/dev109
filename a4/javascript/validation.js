@@ -313,13 +313,18 @@ function userZip() {
       document.getElementById("zip-error").innerHTML = "<p>Invalid Zip: Numeric chars. only</p>";
       console.log("Zip invalid — bad characters")
     }
+    else {
+    validZip = true;
+    document.getElementById("zip-error").innerHTML = "";
+    console.log("Zip valid")
+    }
   }
   else {
     validZip = true;
     document.getElementById("zip-error").innerHTML = "";
     console.log("Zip valid")
   };
-
+  
   //5) return status of each field
   return (validZip);
 }
