@@ -311,6 +311,10 @@ label {
   width: 90%;
 }
 
+iframe{
+    border-width: 0px;
+}
+
 .t-left {
   text-align: left;
 }
