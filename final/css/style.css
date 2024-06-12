@@ -1,1 +1,467 @@
+/* Semi-Globals */
+body {
+  margin: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  background: url("https://images.unsplash.com/photo-1571751239008-50cad6cb9265?q=80&w=3000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") no-repeat center fixed;
+  background-size: cover;
+  font-family: "Varela Round", sans-serif;
+  color: #777;
+}
 
+:root {
+  --gold: #ffb338;
+  --light-shadow: #77571d;
+  --dark-shadow: #3e2904;
+}
+
+/*Container Grid Style*/
+.container {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  /*row-gap: 2vh;*/
+  grid-template-rows: 10vh 12vh 1fr 10vh;
+  grid-template-columns: 1fr;
+}
+
+.items {
+  border: 1px solid black;
+}
+
+
+/*Navigation Style - Passes W3C, Style is Fixed, Sized for Responsive & Theme Color Applied*/
+.main-nav {
+  background: #1c1d22;
+}
+.menu {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+.menu * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+}
+.menu li {
+  display: inline-block;
+  list-style: outside none none;
+  margin: 0 1em;
+  padding: 0;
+}
+.menu a {
+  padding: 0.2em 0.8em;
+  margin: 0.2em 0;
+  display: block;
+  /*color: rgba(255, 255, 255, 0.5);*/
+  color: #ffffff80;
+  position: relative;
+  text-decoration: none;
+}
+.menu a:before,
+.menu a:after {
+  height: 14px;
+  width: 14px;
+  position: absolute;
+  content: '';
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+  opacity: 0;
+}
+.menu a:before {
+  left: 0;
+  top: 0;
+  border-left: 3px solid #d94f5c;
+  border-top: 3px solid #d94f5c;
+  -webkit-transform: translate(100%, 50%);
+  transform: translate(100%, 50%);
+}
+.menu a:after {
+  right: 0;
+  bottom: 0;
+  border-right: 3px solid #d94f5c;
+  border-bottom: 3px solid #d94f5c;
+  -webkit-transform: translate(-100%, -50%);
+  transform: translate(-100%, -50%);
+}
+.menu a:hover,
+.menu .current a {
+  color: #ffffff;
+}
+.menu a:hover:before,
+.menu .current a:before,
+.menu a:hover:after,
+.menu .current a:after {
+  -webkit-transform: translate(0%, 0%);
+  transform: translate(0%, 0%);
+  opacity: 1;
+}
+
+  
+/*Header Style - Passes W3C, Style is Fixed & Sized for Responsive*/
+.header {
+  display: grid;
+  grid-template-areas: 'overlap';
+  place-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  height: 100%;
+}
+
+.header > div {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: #363833;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 900;
+  font-size: clamp(4em, 8vw, 8em);
+  grid-area: overlap;
+  letter-spacing: 1px;
+  -webkit-text-stroke: 4px transparent;
+}
+
+div.bg {
+  background-image: repeating-linear-gradient(
+    105deg,
+    var(--gold) 0%,
+    var(--dark-shadow) 5%,
+    var(--gold) 12%
+  );
+  color: transparent;
+  filter: drop-shadow(5px 15px 15px black);
+  transform: scaleY(1.05);
+  transform-origin: top;
+}
+  
+div.fg {
+  background-image: repeating-linear-gradient(
+    5deg,
+    var(--gold) 0%,
+    var(--light-shadow) 23%,
+    var(--gold) 31%
+  );
+  color: #1e2127;
+  transform: scale(1);
+}
+
+
+/*Content Style*/
+a, p {
+  font-family: "PT Sans", sans-serif;
+  font-size: 1.15em;
+}
+
+/*
+a, p {
+  padding: 1%;
+  line-height: 1;
+  font-family: "PT Sans", sans-serif;
+  font-size: 1.25em;
+}
+*/
+
+a:link {
+  color: #EDD9B4;
+}
+a:visited {
+  color: #EDD9B4;
+}
+a:hover {
+  color: #d94f5c;
+}
+
+h1 {
+  line-height: 1.5;
+}
+
+img {
+  height: 30vh;
+  border-radius: 10px;
+  border: 4px solid black;
+  margin-bottom: 15px;
+}
+
+input[type=submit] {
+  background-color: #EDD9B4;
+  padding: 12px 20px;
+  border: none;
+  margin-top: 1px;
+  margin-bottom: 2px;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+input[type=submit]:hover {
+  background-color: #d94f5c;
+}
+
+input[type=text], textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: none;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+.content {
+  display: grid;
+  column-gap: 2.5vw;
+  grid-template-rows: auto;
+  grid-template-columns: repeat(2, 45%);
+  justify-content: center;
+  align-content: start;
+  overflow-y: auto;
+}
+
+.col-cont {
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-rows: auto;
+  /*grid-template-colums: 1fr;*/
+  justify-items: center;
+  text-align: center;
+  background: #5F6270;
+  color: #040404;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+  
+.col-span {
+  grid-area: 1 / 1 / 1 / 3;
+}
+
+.col-1 {
+  grid-area: 1 / 1 / 1 / 2;
+}
+
+.col-2 {
+  grid-area: 1 / 2 / 1 / 3;
+}
+
+.col-25 {
+  float: left;
+  text-align: left;
+  width: 20%;
+  margin-top: 1px;
+  margin-bottom: 1px;
+}
+.col-75 {
+  float: left;
+  width: 80%;
+  margin-top: 1px;
+  margin-bottom: 1px;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.contact {
+  width: 50%;
+  margin-bottom: 1%;
+}
+  
+.courses {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  /*grid-template-colums: 1fr; - How is this not needed?*/
+  justify-items: center;
+  text-align: center;
+  width: 100%;
+  border: 2px solid black;
+}
+
+.c1 {
+  grid-area: 1 / 1 / 2 / 2;
+}
+.c2 {
+  grid-area: 2 / 1 / 3 / 2;
+}
+.c3 {
+  grid-area: 3 / 1 / 4 / 2;
+}
+
+.c1, .c2, .c3 {
+  width: 100%;
+  border: 2px solid black;
+}
+
+.courses a {
+  line-height: 1.5em;
+  font-size: 1.15em;
+}
+.about p, .courses p, .welcome p {
+  margin: 15px 20px;
+  line-height: 1.15em;
+  font-size: 1.15em;
+}
+
+.t-left {
+  text-align: left;
+}
+
+.warning p {
+  color: #d94f5c;
+  margin: 0;
+  padding: 6px;
+}
+  
+
+
+/*Footer Style - Try to Use Nav Link Transition Later if Time*/
+.footer {
+  align-content: center;
+  text-align: center;
+  background: #1c1d22;
+  font-size: 1.25em;
+  color: #777;
+}
+
+.footer p, .footer a {
+  margin: 0.25em;
+  font-size: 1.15em;
+}
+
+/*Custom Button Style - Passes W3C & Style is Fixed*/
+.buttons {
+  display: flex;
+  justify-self: center;
+  margin: auto;
+  /*margin-top: 15px;*/
+  margin-bottom: 20px;
+  justify-content: space-between;
+  align-items: center;
+  width: 250px;
+}
+
+button {
+  align-items: center;
+  appearance: none;
+  background-color: #FCFCFD;
+  border-radius: 4px;
+  border-width: 0;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #36395A;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "JetBrains Mono",monospace;
+  height: 48px;
+  width: 100px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow .15s,transform .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow,transform;
+  font-size: 18px;
+}
+
+button:focus {
+  box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+}
+
+button:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+button:active {
+  box-shadow: #D6D6E7 0 3px 7px inset;
+  transform: translateY(2px);
+}
+
+
+/*Custom Checkbox Style - Passes W3C, Style is Fixed & Theme Color Applied*/
+.checkbox-wrapper {
+  display: flex;
+  margin: auto;
+  margin-bottom: 20px;
+  justify-content: space-between;
+  align-items: center;
+  width: 150px;
+  font-family: "JetBrains Mono",monospace;
+}
+
+.checkbox-wrapper .ch-input {
+  appearance: none;
+  background-color: #dfe1e4;
+  border-radius: 72px;
+  border-style: none;
+  flex-shrink: 0;
+  height: 20px;
+  margin: 0;
+  position: relative;
+  width: 30px;
+}
+
+.checkbox-wrapper .ch-input::before {
+  bottom: -6px;
+  content: "";
+  left: -6px;
+  position: absolute;
+  right: -6px;
+  top: -6px;
+}
+
+.checkbox-wrapper .ch-input,
+.checkbox-wrapper .ch-input::after {
+  transition: all 100ms ease-out;
+}
+
+.checkbox-wrapper .ch-input::after {
+  background-color: #fff;
+  border-radius: 50%;
+  content: "";
+  height: 14px;
+  left: 3px;
+  position: absolute;
+  top: 3px;
+  width: 14px;
+}
+
+.checkbox-wrapper input[type=checkbox] {
+  cursor: default;
+}
+
+.checkbox-wrapper .ch-input:hover {
+  background-color: #c9cbcd;
+  transition-duration: 0s;
+}
+
+.checkbox-wrapper .ch-input:checked {
+  background-color: #d94f5c;
+}
+
+.checkbox-wrapper .ch-input:checked::after {
+  background-color: #fff;
+  left: 13px;
+}
+
+.checkbox-wrapper :focus:not(.focus-visible) {
+  outline: 0;
+}
+
+.checkbox-wrapper .ch-input:checked:hover {
+  background-color: #991320;
+}
